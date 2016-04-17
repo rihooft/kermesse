@@ -1,0 +1,12 @@
+.new-player {
+    border: 3px solid #DDD;
+    width: 300px;
+    height: 350px;
+    float: left;
+    margin: 5px 5px 0 0;
+    padding: 20px;
+}
+
+.player-preview {
+    overflow: hidden;
+}

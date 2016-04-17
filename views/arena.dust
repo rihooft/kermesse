@@ -1,0 +1,7 @@
+<div class="toolbar">
+    <a href="#/new-game" class="btn btn-sm btn-info">New game</a>
+</div>
+<div>
+    <div class="arena">
+    </div>
+</div>

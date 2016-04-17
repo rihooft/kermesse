@@ -1,0 +1,16 @@
+body {
+    position: relative;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.toolbar {
+    height: 50px;
+    padding: 10px;
+}
+
+.clear {
+    clear: both;
+}

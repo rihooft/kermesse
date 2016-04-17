@@ -1,0 +1,92 @@
+{"frames": {
+
+"Perso 01.png":
+{
+	"frame": {"x":0,"y":0,"w":100,"h":140},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":140},
+	"sourceSize": {"w":100,"h":140}
+},
+"Perso 02.png":
+{
+	"frame": {"x":0,"y":140,"w":100,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":122},
+	"sourceSize": {"w":100,"h":122}
+},
+"Perso 03.png":
+{
+	"frame": {"x":0,"y":262,"w":100,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":115},
+	"sourceSize": {"w":100,"h":115}
+},
+"Perso 04.png":
+{
+	"frame": {"x":0,"y":377,"w":100,"h":138},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":138},
+	"sourceSize": {"w":100,"h":138}
+},
+"Perso 05.png":
+{
+	"frame": {"x":0,"y":515,"w":100,"h":147},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":147},
+	"sourceSize": {"w":100,"h":147}
+},
+"Perso 06.png":
+{
+	"frame": {"x":0,"y":662,"w":100,"h":125},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":125},
+	"sourceSize": {"w":100,"h":125}
+},
+"Perso 07.png":
+{
+	"frame": {"x":0,"y":787,"w":100,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":122},
+	"sourceSize": {"w":100,"h":122}
+},
+"Perso 08.png":
+{
+	"frame": {"x":0,"y":909,"w":100,"h":116},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":116},
+	"sourceSize": {"w":100,"h":116}
+},
+"Perso 09.png":
+{
+	"frame": {"x":0,"y":1025,"w":100,"h":129},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":129},
+	"sourceSize": {"w":100,"h":129}
+},
+"Perso 10.png":
+{
+	"frame": {"x":0,"y":1154,"w":100,"h":134},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":134},
+	"sourceSize": {"w":100,"h":134}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "Runner.png",
+	"format": "RGBA8888",
+	"size": {"w":100,"h":1288},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d36a7e3530aed4fecd273d70ae111045:588f942871b532932de8f1b1659d31f8:28a4ea260c61989239f71220c4699320$"
+}
+}

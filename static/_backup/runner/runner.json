@@ -1,0 +1,92 @@
+{"frames": {
+
+"0003.png":
+{
+	"frame": {"x":0,"y":0,"w":250,"h":288},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":288},
+	"sourceSize": {"w":250,"h":288}
+},
+"0006.png":
+{
+	"frame": {"x":250,"y":0,"w":234,"h":292},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":234,"h":292},
+	"sourceSize": {"w":234,"h":292}
+},
+"0008.png":
+{
+	"frame": {"x":0,"y":292,"w":255,"h":295},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":295},
+	"sourceSize": {"w":255,"h":295}
+},
+"0007.png":
+{
+	"frame": {"x":255,"y":292,"w":246,"h":299},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":246,"h":299},
+	"sourceSize": {"w":246,"h":299}
+},
+"0002.png":
+{
+	"frame": {"x":0,"y":591,"w":248,"h":302},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":248,"h":302},
+	"sourceSize": {"w":248,"h":302}
+},
+"0009.png":
+{
+	"frame": {"x":248,"y":591,"w":235,"h":302},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":235,"h":302},
+	"sourceSize": {"w":235,"h":302}
+},
+"0001.png":
+{
+	"frame": {"x":0,"y":893,"w":216,"h":303},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":216,"h":303},
+	"sourceSize": {"w":216,"h":303}
+},
+"0004.png":
+{
+	"frame": {"x":216,"y":893,"w":219,"h":303},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":219,"h":303},
+	"sourceSize": {"w":219,"h":303}
+},
+"0010.png":
+{
+	"frame": {"x":0,"y":1196,"w":230,"h":308},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":308},
+	"sourceSize": {"w":230,"h":308}
+},
+"0005.png":
+{
+	"frame": {"x":230,"y":1196,"w":214,"h":315},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":214,"h":315},
+	"sourceSize": {"w":214,"h":315}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "runner.png",
+	"format": "RGBA8888",
+	"size": {"w":501,"h":1511},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9403fac58bef0c1b31b7e17ffbaa4b1e:e3cf9cfa03c1025a533518f2d5d20c4b:0df1f239f6cd3572546980ce8827d6b0$"
+}
+}

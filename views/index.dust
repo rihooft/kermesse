@@ -1,0 +1,20 @@
+<html ng-app="funfairGameApp">
+    <head>
+        <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/global.css" />
+        <link rel="stylesheet" href="css/arena.css" />
+        <link rel="stylesheet" href="css/new-game.css" />
+        <script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/lib/angular.min.js"></script>
+        <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/lib/angular-route.js"></script>
+        <script type="text/javascript" src="js/lib/phaser.js"></script>
+        <script type="text/javascript" src="js/FunfairGame.js"></script>
+        <script type="text/javascript" src="js/IndexCtrl.js"></script>
+        <script type="text/javascript" src="js/NewGameCtrl.js"></script>
+        <script type="text/javascript" src="js/ArenaCtrl.js"></script>
+    </head>
+    <body ng-controller="IndexCtrl" ng-style="{'width': configuration.body.widthPercent + '%'}">
+        <ng-view></ng-view>
+    </body>
+</html>

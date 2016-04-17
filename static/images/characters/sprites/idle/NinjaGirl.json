@@ -1,0 +1,92 @@
+{"frames": {
+
+"0001.png":
+{
+	"frame": {"x":0,"y":0,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0002.png":
+{
+	"frame": {"x":0,"y":109,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0003.png":
+{
+	"frame": {"x":0,"y":218,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0004.png":
+{
+	"frame": {"x":0,"y":327,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0005.png":
+{
+	"frame": {"x":0,"y":436,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0006.png":
+{
+	"frame": {"x":0,"y":545,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0007.png":
+{
+	"frame": {"x":0,"y":654,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0008.png":
+{
+	"frame": {"x":0,"y":763,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0009.png":
+{
+	"frame": {"x":0,"y":872,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+},
+"0010.png":
+{
+	"frame": {"x":0,"y":981,"w":63,"h":109},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":109},
+	"sourceSize": {"w":63,"h":109}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ninjagirl_idle.png",
+	"format": "RGBA8888",
+	"size": {"w":63,"h":1090},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:f47778b23681293a34323866964e2af2:76b7590b80b11588ef213d7a8cae8256:7e2deb3df646842e261ce344a5f8e4bf$"
+}
+}

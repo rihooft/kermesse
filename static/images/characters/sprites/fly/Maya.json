@@ -1,0 +1,28 @@
+{"frames": {
+
+"0001.png":
+{
+	"frame": {"x":0,"y":0,"w":150,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":92},
+	"sourceSize": {"w":150,"h":92}
+},
+"0002.png":
+{
+	"frame": {"x":150,"y":0,"w":150,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":92},
+	"sourceSize": {"w":150,"h":92}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "maya.png",
+	"format": "RGBA8888",
+	"size": {"w":300,"h":92},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4ff6f42fbcf95add2be2235dbee73026:c2a24903a325121cbb2e1772de9ea7a2:6b812c2786279c9c56a71e8bdf46b8eb$"
+}
+}

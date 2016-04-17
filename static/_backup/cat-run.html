@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>TexurePacker+Phaser Demo!</title>
+        <script src="js/phaser.min.js"></script>
+    </head>
+    <body>
+        <input type="button" value="Move" onclick="movePlayer(runner, 50);"></input>
+        <input type="button" value="Pause" onclick="actionPlayers(true);"></input>
+        <input type="button" value="Resume" onclick="actionPlayers(false);"></input>
+        <script>
+            var capguy, cat, runner, dragon, stopGame=false;
+
+			window.onload = function() {
+
+			    var game = new Phaser.Game(1200, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+			    function preload () {
+			        game.load.atlasJSONHash('cityscene', 'images/sprites/cityscene.png', 'images/sprites/cityscene.json');
+//			        game.load.atlasJSONHash('cat', 'images/sprites/running_cat.png', 'images/sprites/running_cat.json');
+					imgIndex = Math.floor(Math.random()*2)+1;
+			        game.load.atlasJSONHash('back', 'images/sprites/back'+imgIndex+'.png', 'images/sprites/back'+imgIndex+'.json');
+			        game.load.atlasJSONHash('runner', 'images/sprites/runner.png', 'images/sprites/runner.json');
+			        game.load.atlasJSONHash('dragon', 'images/sprites/dragon.png', 'images/sprites/dragon.json');
+			        game.load.atlasJSONHash('maya', 'images/sprites/maya.png', 'images/sprites/maya.json');
+			        game.load.atlasJSONHash('advgirl', 'images/sprites/adventuregirl.png', 'images/sprites/adventuregirl.json');
+			        game.load.atlasJSONHash('advgirl_idle', 'images/sprites/adventuregirl_idle.png', 'images/sprites/adventuregirl_idle.json');
+			        game.load.image('b1', 'images/numbers/1.png');
+			        game.load.image('b2', 'images/numbers/2.png');
+			        game.load.image('b3', 'images/numbers/3.png');
+			        game.load.image('b4', 'images/numbers/4.png');
+			        game.load.image('b5', 'images/numbers/5.png');
+			    }
+
+			    function create () {
+			        var background = game.add.sprite(0, 0, 'back', 'background');
+
+			        advgirl = game.add.sprite(50, 400, 'advgirl', 'Run (1).png');
+			        advgirl.scale.setTo(0.8,0.8);
+
+			        advgirl.animations.add('walk', Phaser.Animation.generateFrameNames('Run (', 1, 8, ').png', 1), 10, true, false);
+			        advgirl.animations.play('walk');
+
+			        capguy = game.add.sprite(0, 420, 'cityscene', 'capguy/walk/0001');
+			        capguy.scale.setTo(0.3,0.3);
+
+			        capguy.animations.add('walk', Phaser.Animation.generateFrameNames('capguy/walk/', 1, 8, '', 4), 10, true, false);
+			        capguy.animations.play('walk');
+
+			        // cat = game.add.sprite(0, 250, 'cat', 'cat/walk/0001');
+			        // cat.scale.setTo(0.5,0.5);
+
+			        // cat.animations.add('walk', Phaser.Animation.generateFrameNames('cat/walk/', 0, 7, '', 4), 10, true, false);
+			        // cat.animations.play('walk');
+
+			        runner = game.add.sprite(50, 440, 'runner', '00001');
+			        runner.scale.setTo(0.3,0.3);
+
+			        runner.animations.add('walk', Phaser.Animation.generateFrameNames('', 1, 10, '.png', 4), 10, true, false);
+			        runner.animations.play('walk');
+
+
+			        dragon = game.add.sprite(50, 100, 'dragon', '00001');
+			        dragon.scale.setTo(0.6,0.6);
+
+			        dragon.animations.add('walk', Phaser.Animation.generateFrameNames('', 1, 10, '.png', 4), 10, true, false);
+			        dragon.animations.play('walk');
+
+			        maya = game.add.sprite(50, 280, 'maya', '00001');
+			        maya.scale.setTo(0.8,0.8);
+
+			        maya.animations.add('walk', Phaser.Animation.generateFrameNames('', 1, 2, '.png', 4), 10, true, false);
+			        maya.animations.play('walk');
+
+                var style = { font : "14px Arial",
+                    fill: "#3399FF",
+                    align: "center"
+                };
+//                text = game.add.text(game.world.centerX, game.world.centerY, runner.x-capguy.x, style);
+                // text.anchor.set(0.5);
+//                text = game.add.text(game.world.centerX, game.world.centerY-20, "10 pt(s)", style);
+//                text.anchor.set(0.5);
+				b1 = game.add.image(0, 0, 'b1');
+				b1.anchor.set(0.1);
+				b2 = game.add.image(0, 0, 'b2');
+				b2.anchor.set(0.1);
+				b3 = game.add.image(0, 0, 'b3');
+				b3.anchor.set(0.1);
+				b4 = game.add.image(0, 0, 'b4');
+				b4.anchor.set(0.1);
+				b5 = game.add.image(0, 0, 'b5');
+				b5.anchor.set(0.1);
+				//b1.scale.setTo(0.3,0.3);
+
+
+			    }
+
+			    function update() {
+                    //cat.animations.stop('walk', 0);
+
+
+			        if (!stopGame) {
+				        advgirl.x += Math.floor(Math.random() * 3) + 1;
+				        if(advgirl.x > 1200)
+				        {
+				            advgirl.x = -50;
+				        }
+		                b3.x = advgirl.x+40;
+		                b3.y = advgirl.y-40;
+		                b3.alpha = 70;
+
+				        capguy.x += Math.floor(Math.random() * 3) + 1;
+				        if(capguy.x > 1200)
+				        {
+				            capguy.x = -50;
+				        }
+		                b2.x = capguy.x+20;
+		                b2.y = capguy.y-40;
+		                b2.alpha = 70;
+
+				        runner.x += Math.floor(Math.random() * 3) + 1;
+				        if(runner.x > 1200)
+				        {
+				            runner.x = -50;
+				        }
+				        runner.alpha = 10;
+
+		                b1.x = runner.x+20;
+		                b1.y = runner.y-40;
+		                b1.alpha = 70;
+
+			        	// text.setText(runner.x-capguy.x);
+		          //       if (runner.x-capguy.x >= 50) {
+		          //       	b2.alpha = 50;
+		          //       } else {
+		          //       	b2.alpha=100;
+		          //       }
+
+
+				        maya.x += Math.floor(Math.random() * 3) + 1;
+				        if(maya.x > 1200)
+				        {
+				            maya.x = -50;
+				        }
+		                b4.x = maya.x;
+		                b4.y = maya.y-20;
+		                b4.alpha = 70;
+
+				        dragon.x += Math.floor(Math.random() * 3) + 1;
+				        if(dragon.x > 1200)
+				        {
+				            dragon.x = -50;
+				        }
+		                b5.x = dragon.x;
+		                b5.y = dragon.y-20;
+		                b5.alpha = 70;
+
+			        }
+			    }
+
+			};
+
+            movePlayer = function(player, x) {
+                runner.animations.play('walk');
+                player.x += x;
+                //cat.animations.stop('walk', 1);
+
+            };           
+            actionPlayers = function(bool) {
+				stopGame = bool;
+				if (bool){
+					runner.animations.stop(null, true);
+					runner.animations.setFrame(0, true);
+					advgirl.loadTexture('advgirl_idle', 0, false);
+				} else {
+					runner.animations.play('walk');
+					advgirl.loadTexture('advgirl', 0, false);
+				}
+            };
+        </script>
+
+    </body>
+</html>

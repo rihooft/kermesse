@@ -1,0 +1,28 @@
+{
+	"server": {
+		"port": 8002
+	},
+	"game": {
+		"boosterCoef": 1.5,
+		"totalPoints": 50
+	},
+	"mqtt": {
+		"url": "mqtt://10.19.1.112",
+		"port" : 1883,
+		"user": "pi",
+		"password": "monta2016",
+		"qos" : 0,
+		"retain": "false",
+		"topic": {
+			"sensor": "player/sensor",
+			"start": "player/start",
+			"score": "player/score",
+			"reset": "player/reset",
+			"clear": "player/clear",
+			"win": "player/win",
+			"getConfig": "config/get",
+			"setConfig": "config/set",
+			"message": "message"
+		}
+	}
+}

@@ -1,0 +1,76 @@
+{"frames": {
+
+"0001.png":
+{
+	"frame": {"x":0,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0002.png":
+{
+	"frame": {"x":130,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0003.png":
+{
+	"frame": {"x":260,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0004.png":
+{
+	"frame": {"x":390,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0005.png":
+{
+	"frame": {"x":520,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0006.png":
+{
+	"frame": {"x":650,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0007.png":
+{
+	"frame": {"x":780,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0008.png":
+{
+	"frame": {"x":910,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "adventuregirl.png",
+	"format": "RGBA8888",
+	"size": {"w":1040,"h":110},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8d15185f35538fc2c053b7547e8f27c5:4f6faedfb93c998efe65e1daffafce9c:7bd692493e43ae3f3032714c769b8780$"
+}
+}

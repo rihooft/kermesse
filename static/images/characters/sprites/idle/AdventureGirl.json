@@ -1,0 +1,92 @@
+{"frames": {
+
+"0001.png":
+{
+	"frame": {"x":0,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0002.png":
+{
+	"frame": {"x":130,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0003.png":
+{
+	"frame": {"x":260,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0004.png":
+{
+	"frame": {"x":390,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0005.png":
+{
+	"frame": {"x":520,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0006.png":
+{
+	"frame": {"x":650,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0007.png":
+{
+	"frame": {"x":780,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0008.png":
+{
+	"frame": {"x":910,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0009.png":
+{
+	"frame": {"x":1040,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+},
+"0010.png":
+{
+	"frame": {"x":1170,"y":0,"w":130,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":110},
+	"sourceSize": {"w":130,"h":110}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "adventuregirl_idle.png",
+	"format": "RGBA8888",
+	"size": {"w":1300,"h":110},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:70d03e24b452a861c3227af057d11209:c027fc91435906aba5c9b9d9ef627d92:c1b4ac1696514a61aeea0a58086b340f$"
+}
+}
