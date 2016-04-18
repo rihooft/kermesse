@@ -64,9 +64,10 @@ exports.initialize = function (server) {
 	server.get('/characters', function (req, res, next) {
 		glob(path.join(BASE_DIR, 'static/images/characters/menu/*.png'), function (err, files) {
 			return res.json(files.map(function (file) {
+				var name = path.basename(file).split('.');
 				return {
-					"name": path.basename(file).split(".")[0],
-					"action": path.basename(file).split(".")[1],
+					"name": name[0],
+					"action": (name[1] != 'png' ? name[1] : 'run'),
 					"image": path.join("images/characters/menu", path.basename(file))
 				}
 			}));

@@ -20,6 +20,14 @@ funfairGameApp.controller('IndexCtrl', ['$scope', function ($scope) {
            "height": 600
         },
         "character":{
+            "run": {
+                "x": 20,
+                "y": 390
+            },
+            "fly": {
+                "x": 20,
+                "y": 225
+            },
             "runner":{
                 "sprite": {
                     "filename" : "runner.png",
