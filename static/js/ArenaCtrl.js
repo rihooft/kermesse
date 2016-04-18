@@ -128,15 +128,10 @@ console.log("Entering _createGame",players);
             // Background
             $scope._game.add.sprite(0, 0, 'back', 'background');
 
-            var origin = {};
-            origin.y = 390;
-            origin.x = 20;
-
             // Players
             for (var idx in players) {
                 _imageName = players[idx].image.split('/').reverse()[0].split('.')[0]+'_idle';
-                origin.y = (players[idx].action == 'run' ? origin.y : 225);
-                $scope._gamePlayers[idx] = $scope._game.add.sprite((players.length-idx)*origin.x, origin.y+idx * 20, _imageName, '0001.png');
+                $scope._gamePlayers[idx] = $scope._game.add.sprite((players.length-idx)*$scope.configuration.character[players[idx].action].x, $scope.configuration.character[players[idx].action].y+idx * 20, _imageName, '0001.png');
                 $scope._gamePlayers[idx].animations.add('idle');
                 $scope._gamePlayers[idx].animations.play('idle',10,true);
                 num = eval(idx)+1;
@@ -196,7 +191,7 @@ console.log("ArenaCtrl init");
         $scope._refreshInformations();
 
         // Set interval
-        $scope._refreshPromise = $timeout($scope._refreshInformations, $scope.configuration.refreshInterval);
+        $scope.refreshPromise = $timeout($scope._refreshInformations, $scope.configuration.refreshInterval);
     };
 
     $scope.init();
