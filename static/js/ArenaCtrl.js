@@ -93,19 +93,18 @@ console.log("$scope.startOfGame",$scope.startOfGame);
         if (!$scope._imagesAlreadyLoaded) {
 console.log("Entering _preloadGame");
             var _imageName = null;
-            var players = $scope._players;
             var num=0;
-            console.log("players=",players);
+            console.log("players=", $scope._players);
 
             var _imgIndex = 2;//Math.floor(Math.random() * 2) + 1;
             $scope._game.load.atlasJSONHash('back', 'images/arena/back' + _imgIndex + '.png', 'images/arena/back' + _imgIndex + '.json');
             $scope._numbers = {};
             // Players
-            for (var idx in players) {
+            for (var idx in $scope._players) {
             // console.log("_imagePath",_imagePath);
-            _imageName = players[idx].image.split('/').reverse()[0].split('.')[0];
+            _imageName = $scope._players[idx].image.split('/').reverse()[0].split('.')[0];
 //            console.log("ADD", _imageName, 'images/characters/sprites/run/'+_imageName+'.png', 'images/characters/sprites/run/'+_imageName+'.json');
-                $scope._game.load.atlasJSONHash(_imageName, 'images/characters/sprites/run/'+_imageName+'.png', 'images/characters/sprites/run/'+_imageName+'.json');
+                $scope._game.load.atlasJSONHash(_imageName, 'images/characters/sprites/'+$scope._players[idx].action+'/'+_imageName+'.png', 'images/characters/sprites/'+$scope._players[idx].action+'/'+_imageName+'.json');
                 $scope._game.load.atlasJSONHash(_imageName+'_idle', 'images/characters/sprites/idle/'+_imageName+'.png', 'images/characters/sprites/idle/'+_imageName+'.json');
                 num=eval(idx)+1;
 //            console.log("ADD", 'b' + num, 'images/numbers/' + num + '.png');
@@ -132,8 +131,7 @@ console.log("Entering _createGame",players);
             // Players
             for (var idx in players) {
                 _imageName = players[idx].image.split('/').reverse()[0].split('.')[0]+'_idle';
-
-                $scope._gamePlayers[idx] = $scope._game.add.sprite((players.length-idx)*20, 390+idx * 20, _imageName, '0001.png');
+                $scope._gamePlayers[idx] = $scope._game.add.sprite((players.length-idx)*$scope.configuration.character[players[idx].action].x, $scope.configuration.character[players[idx].action].y+idx * 20, _imageName, '0001.png');
                 $scope._gamePlayers[idx].animations.add('idle');
                 $scope._gamePlayers[idx].animations.play('idle',10,true);
                 num = eval(idx)+1;
@@ -193,7 +191,7 @@ console.log("ArenaCtrl init");
         $scope._refreshInformations();
 
         // Set interval
-        $scope._refreshPromise = $timeout($scope._refreshInformations, $scope.configuration.refreshInterval);
+        $scope.refreshPromise = $timeout($scope._refreshInformations, $scope.configuration.refreshInterval);
     };
 
     $scope.init();

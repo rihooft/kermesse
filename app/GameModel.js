@@ -9,9 +9,11 @@ exports.createGame = function (players, callback) {
 	};
 	
 	for (var idx in players) {
+		var name = players[idx].image.split('.');
 		_game.players[idx] = {
 			"name": players[idx].name,
 			"image": players[idx].image,
+			"action": (name[1] != 'png' ? name[1] : 'run'),
 			"points": 0
 		};
 	}
