@@ -9,6 +9,8 @@ funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window
     $scope._scoreTexts = null;
     $scope._players = null;
     $scope._numbers = null;
+    $scope._timer = null;
+    $scope._timerEvent = null;
     /**
      * Refresh informations
      */
@@ -28,7 +30,8 @@ funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window
                             $scope._game = new Phaser.Game($scope.configuration.arena.width, $scope.configuration.arena.height, Phaser.AUTO, '', {
                                 "preload": $scope._preloadGame,
                                 "create": $scope._createGame, //function () {},
-                                "update": $scope._updateGame
+                                "update": $scope._updateGame,
+                                "render": $scope._renderGame
                             });
 
                        }
@@ -41,6 +44,23 @@ funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window
         //}
 
     };
+
+    $scope._renderGame = function () {
+        // If our timer is running, show the time in a nicely formatted way, else show 'Done!'
+        if ($scope._timer.running) {
+            $scope._game.debug.text($scope._formatTime(Math.round(($scope._timerEvent.delay - $scope._timer.ms) / 1000)), 2, 14, "#ff0");
+        }
+        else {
+            $scope._game.debug.text("Done!", 2, 14, "#0f0");
+        }
+    }
+
+    $scope._formatTime = function (s) {
+        // Convert seconds (s) to a nicely formatted and padded time string
+        var minutes = "0" + Math.floor(s / 60);
+        var seconds = "0" + (s - minutes * 60);
+        return minutes.substr(-2) + ":" + seconds.substr(-2);
+    }
 
     /*
      * Refresh game
@@ -139,8 +159,22 @@ console.log("Entering _createGame",players);
 
                 $scope._scoreTexts[idx] = $scope._game.add.text(10, idx * 40, players[idx].name + ': 0', { font: '34px Arial', fill: '#fff' });
             }
+            $scope._timer = $scope._game.time.create();
+
+            // Create a delayed event 1m and 30s from now
+            $scope._timerEvent = $scope._timer.add(Phaser.Timer.MINUTE * 1 + Phaser.Timer.SECOND * 30, $scope._endTimer, this);
+
+            // Start the timer
+            $scope._timer.start();
+
         }
     }
+
+    $scope._endTime = function () {
+        $scope._timer.stop();
+        currentGame.endOfGame = true;
+    }
+
     /**
      * Update game
      */
