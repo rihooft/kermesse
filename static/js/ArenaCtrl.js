@@ -1,29 +1,27 @@
 /**
  * Arena controller
  */
-funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window', '$timeout', function ($scope, $http, $interval, $window, $timeout) {
+funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window', '$timeout', 'currentGame', function ($scope, $http, $interval, $window, $timeout, currentGame) {
 
     $scope._refreshPromise = null;
     $scope._imagesAlreadyLoaded = false;
     $scope._gamePlayers = null;
+    $scope._scoreTexts = null;
     $scope._players = null;
     $scope._numbers = null;
     /**
      * Refresh informations
      */
     $scope._refreshInformations = function () {
-        //console.log("Loading informations");
-console.log("Entering _refreshInformations...");
-console.log("$scope.endOfGame",$scope.endOfGame);
-console.log("$scope.startOfGame",$scope.startOfGame);
-//        if ($scope.startOfGame) {
+        console.log("currentGame.startOfGame",currentGame.startOfGame);
+        //if (currentGame.startOfGame) {
 
             $http.get('/games/latest')
                 .success(function (response) {
                     //console.log("Informations loaded");
 
                     if (response) {
-    console.log("Entering _refreshGame...");
+                        console.log("Entering _refreshGame...");
                         if (!$scope._imagesAlreadyLoaded) {
                             
                             // Create game
@@ -40,7 +38,7 @@ console.log("$scope.startOfGame",$scope.startOfGame);
                 .error(function (response) {
                     console.log("Error while loading game information");
                 });         
-//        }
+        //}
 
     };
 
@@ -48,13 +46,13 @@ console.log("$scope.startOfGame",$scope.startOfGame);
      * Refresh game
      */
     $scope._refreshGame = function (response) {
-        if ($scope.endOfGame) {
+        if (currentGame.endOfGame) {
             return;
         }
 
         $scope._players =[];
         var _player = null, _winners = [];
-
+        currentGame.startOfGame = !(0 >= response.players.length);
         // Players
         for (var idx in response.players) {
             _player = angular.copy(response.players[idx]);
@@ -78,7 +76,7 @@ console.log("$scope.startOfGame",$scope.startOfGame);
                 });
             _player.points=0;
             // End of game
-            $scope.endOfGame = true;
+            currentGame.endOfGame = true;
         }
 
         // Update game
@@ -124,6 +122,7 @@ console.log("Entering _preloadGame");
 console.log("Entering _createGame",players);
         if (!$scope._gamePlayers) {
             $scope._gamePlayers = {};
+            $scope._scoreTexts = {};
 
             // Background
             $scope._game.add.sprite(0, 0, 'back', 'background');
@@ -135,8 +134,10 @@ console.log("Entering _createGame",players);
                 $scope._gamePlayers[idx].animations.add('idle');
                 $scope._gamePlayers[idx].animations.play('idle',10,true);
                 num = eval(idx)+1;
-                $scope._numbers['b' + num] = $scope._game.add.image(0, 0, 'b' + num);
+                $scope._numbers['b' + num] = $scope._game.add.image($scope._gamePlayers[idx].x+20, $scope._gamePlayers[idx].y-20, 'b' + num);
                 $scope._numbers['b' + num].anchor.set(0.1);
+
+                $scope._scoreTexts[idx] = $scope._game.add.text(10, idx * 40, players[idx].name + ': 0', { font: '34px Arial', fill: '#fff' });
             }
         }
     }
@@ -170,7 +171,8 @@ console.log("Entering _createGame",players);
                 }
               // $scope._gamePlayers[idx].play(_imageName, 10, true);
 
-            }            ;
+            }
+            $scope._scoreTexts[idx].setText(players[idx].name + ': ' + players[idx].points);
         }
     };
 
@@ -191,7 +193,22 @@ console.log("ArenaCtrl init");
         $scope._refreshInformations();
 
         // Set interval
-        $scope.refreshPromise = $timeout($scope._refreshInformations, $scope.configuration.refreshInterval);
+        /*
+        $scope.refreshPromise = $timeout(
+            function() {
+                console.log('In refreshPromise', $scope.configuration.refreshInterval);
+                $scope._refreshInformations();
+            },
+            $scope.configuration.refreshInterval
+        );
+        */
+        setInterval(function() {
+                console.log('In refreshPromise', $scope.configuration.refreshInterval);
+                $scope._refreshInformations();
+            },
+            $scope.configuration.refreshInterval
+        );
+
     };
 
     $scope.init();

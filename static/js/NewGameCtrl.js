@@ -1,7 +1,7 @@
 /**
  * New game controller
  */
-funfairGameApp.controller('NewGameCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+funfairGameApp.controller('NewGameCtrl', ['$scope', '$http', '$location', 'currentGame', function ($scope, $http, $location, currentGame) {
 
     /**
      * Get array number
@@ -55,8 +55,8 @@ funfairGameApp.controller('NewGameCtrl', ['$scope', '$http', '$location', functi
                 .error(function (response) {
                     console.log("Error while posting game start");
                 });
-        $scope.endOfGame = false;
-        $scope.startOfGame = true;
+        currentGame.endOfGame = false;
+        currentGame.startOfGame = true;
         console.log("onGameConfirmed : $scope.startOfGame",$scope.startOfGame);
     };
 
@@ -79,10 +79,11 @@ funfairGameApp.controller('NewGameCtrl', ['$scope', '$http', '$location', functi
      * Initialize
      */
     $scope.init = function () {
+        console.log('In init newGameCtrl...');
         $scope.newPlayers = {};
 		$scope._loadCharacters();
-        $scope.endOfGame = true;
-        $scope.startOfGame = false;
+        currentGame.endOfGame = true;
+        currentGame.startOfGame = false;
     };
 
     $scope.init();
