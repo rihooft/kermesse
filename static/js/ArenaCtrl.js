@@ -6,6 +6,7 @@ funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window
     $scope._refreshPromise = null;
     $scope._imagesAlreadyLoaded = false;
     $scope._gamePlayers = null;
+    $scope._scoreTexts = null;
     $scope._players = null;
     $scope._numbers = null;
     /**
@@ -121,6 +122,7 @@ console.log("Entering _preloadGame");
 console.log("Entering _createGame",players);
         if (!$scope._gamePlayers) {
             $scope._gamePlayers = {};
+            $scope._scoreTexts = {};
 
             // Background
             $scope._game.add.sprite(0, 0, 'back', 'background');
@@ -134,6 +136,8 @@ console.log("Entering _createGame",players);
                 num = eval(idx)+1;
                 $scope._numbers['b' + num] = $scope._game.add.image($scope._gamePlayers[idx].x+20, $scope._gamePlayers[idx].y-20, 'b' + num);
                 $scope._numbers['b' + num].anchor.set(0.1);
+
+                $scope._scoreTexts[idx] = $scope._game.add.text(10, idx * 40, players[idx].name + ': 0', { font: '34px Arial', fill: '#fff' });
             }
         }
     }
@@ -167,7 +171,8 @@ console.log("Entering _createGame",players);
                 }
               // $scope._gamePlayers[idx].play(_imageName, 10, true);
 
-            }            ;
+            }
+            $scope._scoreTexts[idx].setText(players[idx].name + ': ' + players[idx].points);
         }
     };
 
