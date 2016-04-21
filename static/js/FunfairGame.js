@@ -1,5 +1,7 @@
 var funfairGameApp = angular.module('funfairGameApp', ['ngRoute']);
 
+funfairGameApp.value('currentGame', { startOfGame: false, endOfGame: false });
+
 /**
  * Router
  */

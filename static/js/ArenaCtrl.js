@@ -1,7 +1,7 @@
 /**
  * Arena controller
  */
-funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window', '$timeout', function ($scope, $http, $interval, $window, $timeout) {
+funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window', '$timeout', 'currentGame', function ($scope, $http, $interval, $window, $timeout, currentGame) {
 
     $scope._refreshPromise = null;
     $scope._imagesAlreadyLoaded = false;
@@ -13,10 +13,10 @@ funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window
      */
     $scope._refreshInformations = function () {
         //console.log("Loading informations");
-console.log("Entering _refreshInformations...");
-console.log("$scope.endOfGame",$scope.endOfGame);
-console.log("$scope.startOfGame",$scope.startOfGame);
-//        if ($scope.startOfGame) {
+//console.log("Entering _refreshInformations...");
+//console.log("$scope.endOfGame",$scope.endOfGame);
+console.log("currentGame.startOfGame",currentGame.startOfGame);
+        if (currentGame.startOfGame) {
 
             $http.get('/games/latest')
                 .success(function (response) {
@@ -40,7 +40,7 @@ console.log("$scope.startOfGame",$scope.startOfGame);
                 .error(function (response) {
                     console.log("Error while loading game information");
                 });         
-//        }
+        }
 
     };
 
@@ -48,13 +48,13 @@ console.log("$scope.startOfGame",$scope.startOfGame);
      * Refresh game
      */
     $scope._refreshGame = function (response) {
-        if ($scope.endOfGame) {
+        if (currentGame.endOfGame) {
             return;
         }
 
         $scope._players =[];
         var _player = null, _winners = [];
-
+        currentGame.startOfGame = !(0 >= response.players.length);
         // Players
         for (var idx in response.players) {
             _player = angular.copy(response.players[idx]);
@@ -78,7 +78,7 @@ console.log("$scope.startOfGame",$scope.startOfGame);
                 });
             _player.points=0;
             // End of game
-            $scope.endOfGame = true;
+            currentGame.endOfGame = true;
         }
 
         // Update game
@@ -191,7 +191,22 @@ console.log("ArenaCtrl init");
         $scope._refreshInformations();
 
         // Set interval
-        $scope.refreshPromise = $timeout($scope._refreshInformations, $scope.configuration.refreshInterval);
+        /*
+        $scope.refreshPromise = $timeout(
+            function() {
+                console.log('In refreshPromise', $scope.configuration.refreshInterval);
+                $scope._refreshInformations();
+            },
+            $scope.configuration.refreshInterval
+        );
+        */
+        setInterval(function() {
+                console.log('In refreshPromise', $scope.configuration.refreshInterval);
+                $scope._refreshInformations();
+            },
+            $scope.configuration.refreshInterval
+        );
+
     };
 
     $scope.init();

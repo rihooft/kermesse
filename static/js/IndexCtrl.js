@@ -1,7 +1,7 @@
 /**
  * Index controller
  */
-funfairGameApp.controller('IndexCtrl', ['$scope', function ($scope) {
+funfairGameApp.controller('IndexCtrl', ['$scope', 'currentGame', function ($scope, currentGame) {
 
     /**
      * Attributes
@@ -57,7 +57,8 @@ funfairGameApp.controller('IndexCtrl', ['$scope', function ($scope) {
      * Initialize
      */
     $scope.init = function () {
-        $scope.startOfGame = false;
+        currentGame.startOfGame = false;
+        currentGame.endOfGame = false;
     };
 
     $scope.init();
