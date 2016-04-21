@@ -20,7 +20,7 @@ exports.initialize = function () {
 	    _client.subscribe(configuration.mqtt.topic.getConfig);
 	    _client.subscribe(configuration.mqtt.topic.message);
 
-	    console.log('LA');
+	    console.log('Connection to MQTT done. All subscribes are done');
 	 });
 
 	// On message event

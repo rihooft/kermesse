@@ -12,18 +12,15 @@ funfairGameApp.controller('ArenaCtrl', ['$scope', '$http', '$interval', '$window
      * Refresh informations
      */
     $scope._refreshInformations = function () {
-        //console.log("Loading informations");
-//console.log("Entering _refreshInformations...");
-//console.log("$scope.endOfGame",$scope.endOfGame);
-console.log("currentGame.startOfGame",currentGame.startOfGame);
-        if (currentGame.startOfGame) {
+        console.log("currentGame.startOfGame",currentGame.startOfGame);
+        //if (currentGame.startOfGame) {
 
             $http.get('/games/latest')
                 .success(function (response) {
                     //console.log("Informations loaded");
 
                     if (response) {
-    console.log("Entering _refreshGame...");
+                        console.log("Entering _refreshGame...");
                         if (!$scope._imagesAlreadyLoaded) {
                             
                             // Create game
@@ -40,7 +37,7 @@ console.log("currentGame.startOfGame",currentGame.startOfGame);
                 .error(function (response) {
                     console.log("Error while loading game information");
                 });         
-        }
+        //}
 
     };
 
@@ -135,7 +132,7 @@ console.log("Entering _createGame",players);
                 $scope._gamePlayers[idx].animations.add('idle');
                 $scope._gamePlayers[idx].animations.play('idle',10,true);
                 num = eval(idx)+1;
-                $scope._numbers['b' + num] = $scope._game.add.image(0, 0, 'b' + num);
+                $scope._numbers['b' + num] = $scope._game.add.image($scope._gamePlayers[idx].x+20, $scope._gamePlayers[idx].y-20, 'b' + num);
                 $scope._numbers['b' + num].anchor.set(0.1);
             }
         }
